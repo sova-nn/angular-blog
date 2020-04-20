@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1>Создание нового поста</h1>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+  >
+    <label for="title">Название поста</label>
+    <input id="title" type="text" formControlName="title">
+    <div class="validation"
+         *ngIf="form.get('title').touched && form.get('title').invalid">
+      <small *ngIf="form.get('title').errors.required">Введите название поста</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="author">Контент поста</label>
+    <quill-editor formControlName="text"></quill-editor>
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}"
+  >
+    <label for="author">Автор поста</label>
+    <input id="author" type="text" formControlName="author">
+    <div class="validation"
+         *ngIf="form.get('author').touched && form.get('author').invalid">
+      <small *ngIf="form.get('author').errors.required">Введите имя автора</small>
+    </div>
+  </div>
+
+  <button type="submit"
+          class="btn btn-block btn-dark"
+          [disabled]="form.invalid"
+>Создать пост</button>
+</form>

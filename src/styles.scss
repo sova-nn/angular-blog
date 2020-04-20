@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import "~quill/dist/quill.core.css";
 @import "~quill/dist/quill.snow.css";
+
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -16,7 +17,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -27,9 +28,10 @@ a {
   color: var(--primary-color);
   cursor: pointer;
   text-decoration: none;
-}
-a:hover {
-  color: #666;
+
+  &:hover {
+    color: #666;
+  }
 }
 
 ul {
@@ -71,21 +73,24 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
-}
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.card-content {
-  margin-bottom: 0.5rem;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-content {
+    margin-bottom: .5rem;
+  }
 }
 
 .list {
   margin: 0.5rem 0;
-}
-.list li {
-  padding-bottom: 0.3rem;
+
+  li {
+    padding-bottom: 0.3rem;
+  }
 }
 
 .btn {
@@ -99,11 +104,12 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
-}
-.btn:disabled {
-  cursor: not-allowed;
-  background: var(--light-color);
-  color: #111;
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--light-color);
+    color: #111;
+  }
 }
 
 .btn-link {
@@ -207,22 +213,24 @@ img {
 .form-control {
   display: block;
   color: #888;
-  margin-bottom: 0.8rem;
-}
-.form-control.invalid {
-  color: var(--primary-color);
-}
-.form-control.invalid input {
-  border-color: var(--primary-color);
-}
-.form-control .validation {
-  color: var(--primary-color);
+  margin-bottom: .8rem;
+
+  &.invalid {
+    color: var(--primary-color);
+    input {
+      border-color: var(--primary-color);
+    }
+  }
+
+  .validation {
+    color: var(--primary-color);
+  }
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
 select,
 textarea {
   display: block;
@@ -232,7 +240,7 @@ textarea {
   border: 1px solid #ccc;
 }
 
-input[type=submit],
+input[type='submit'],
 button {
   font: inherit;
 }
@@ -261,29 +269,33 @@ table th {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
-}
-.navbar.main {
-  justify-content: center;
-  border-bottom: 1px solid var(--dark-color);
-}
-.navbar ul {
-  display: flex;
-}
-.navbar li {
-  color: #28a745;
-}
-.navbar li.active a {
-  color: var(--dark-color);
-  font-weight: bold;
-  cursor: default;
-}
-.navbar a {
-  color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-}
-.navbar a:hover {
-  color: var(--light-color);
-}
 
-/*# sourceMappingURL=styles.css.map */
+  &.main {
+    justify-content: center;
+    border-bottom: 1px solid var(--dark-color);
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    color: #28a745;
+  }
+
+  li.active a {
+    color: var(--dark-color);
+    font-weight: bold;
+    cursor: default;
+  }
+
+  a {
+    color: #fff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+}
